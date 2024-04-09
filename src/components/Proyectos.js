@@ -277,17 +277,14 @@ function Proyectos(props) {
   return (
     <section id="proyectos" className="proyectos">
       <h2 className="proyectos--titulo">
-        <span className="texto--color">
-          Proyectos: Código que Cuenta Historias
-        </span>
+        <span className="texto--color">{t("proyectos.Titulo")}</span>
       </h2>
       <p
         className={`proyectos--introduccion ${
           props.modoOscuro ? "texto--modoOscuro" : ""
         }`}
       >
-        ¡Bienvenido a mi galería de proyectos! 💻🚀 Cada línea de código cuenta
-        una historia de desafíos superados y soluciones creativas.
+        {t("proyectos.Introduccion")}
       </p>
       <div className="proyectos--container">{componentesProyectos}</div>
     </section>
