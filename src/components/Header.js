@@ -1,18 +1,28 @@
 import React from "react";
 import { MagicTabSelect } from "react-magic-motion";
+
+import { useTranslation } from "react-i18next";
+
 import biografia from "../images/biografia.svg";
 import proyectos from "../images/proyectos.svg";
 import lenguajes from "../images/lenguajes.svg";
 import idiomas from "../images/idiomas.svg";
 import pasatiempos from "../images/pasatiempos.svg";
 
+import CambioIdioma from "./CambioIdioma";
+
 function Header(props) {
+  const { t } = useTranslation();
   const elementosNav = [
-    { texto: "Biografía", icono: biografia, seccion: "biografia"},
-    { texto: "Proyectos", icono: proyectos, seccion: "proyectos" },
-    { texto: "Lenguajes", icono: lenguajes, seccion: "lenguajes" },
-    { texto: "Idiomas", icono: idiomas, seccion: "idiomas" },
-    { texto: "Pasatiempos", icono: pasatiempos, seccion: "pasatiempos" },
+    { texto: t("header.Biografia"), icono: biografia, seccion: "biografia" },
+    { texto: t("header.Proyectos"), icono: proyectos, seccion: "proyectos" },
+    { texto: t("header.Lenguajes"), icono: lenguajes, seccion: "lenguajes" },
+    { texto: t("header.Idiomas"), icono: idiomas, seccion: "idiomas" },
+    {
+      texto: t("header.Pasatiempos"),
+      icono: pasatiempos,
+      seccion: "pasatiempos",
+    },
   ];
 
   const [indiceHov, setindiceHov] = React.useState(null);
@@ -24,14 +34,17 @@ function Header(props) {
         href={`#${elemento.seccion}`}
         onMouseEnter={() => setindiceHov(index)}
         className="nav--link"
-        style={{color:props.modoOscuro?"white":"#0e141b"}}
+        style={{ color: props.modoOscuro ? "white" : "#0e141b" }}
       >
         {indiceHov === index && (
           <MagicTabSelect
             id="pillTabs"
             transition={{ type: "spring", bounce: 0.3 }}
           >
-            <span className="nav--span" style={{boxShadow:"0 0 20px #20a97b"}}></span>
+            <span
+              className="nav--span"
+              style={{ boxShadow: "0 0 20px #20a97b" }}
+            ></span>
           </MagicTabSelect>
         )}
         <img
@@ -53,8 +66,9 @@ function Header(props) {
           }`}
           onClick={props.cambiarModo}
         >
-          {props.modoOscuro ? "Modo claro" : "Modo oscuro"}
+          {props.modoOscuro ? t("header.Modo_claro") : t("header.Modo_oscuro")}
         </button>
+        <CambioIdioma darkMode={props.modoOscuro} />
         {componentesNav}
       </div>
     </nav>

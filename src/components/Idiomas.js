@@ -5,28 +5,32 @@ import intermedioBlanco from "../images/idiomas/intermedio-blanco.svg";
 import basico from "../images/idiomas/basico.svg";
 import basicoBlanco from "../images/idiomas/basico-blanco.svg";
 
+import { useTranslation } from "react-i18next";
+
 function Idiomas(props) {
+  const { t } = useTranslation();
+
   const objetoIdiomas = [
     {
-      idioma: "Español",
-      nivel: "Nativo",
+      idioma: t("idiomas.Idiomas.ES"),
+      nivel: t("idiomas.Niveles.Nativo"),
       icono: `${props.modoOscuro ? nativoBlanco : nativo}`,
     },
     {
-      idioma: "Inglés",
-      nivel: "Intermedio",
+      idioma: t("idiomas.Idiomas.EN"),
+      nivel: t("idiomas.Niveles.Intermedio"),
       icono: `${props.modoOscuro ? intermedioBlanco : intermedio}`,
     },
     {
-      idioma: "Italiano",
-      nivel: "Básico",
+      idioma: t("idiomas.Idiomas.IT"),
+      nivel: t("idiomas.Niveles.Basico"),
       icono: `${props.modoOscuro ? basicoBlanco : basico}`,
     },
   ];
 
   const elementosIdiomas = objetoIdiomas.map((idioma, index) => {
     return (
-      <div className="idiomas--idioma-container" key={index}>        
+      <div className="idiomas--idioma-container" key={index}>
         <img
           className="idiomas--idioma-icono"
           alt={`Icono nivel ${idioma.nivel} del idioma ${idioma.idioma}`}
@@ -47,18 +51,14 @@ function Idiomas(props) {
   return (
     <section id="idiomas" className="idiomas">
       <h2 className="idiomas--titulo">
-        <span className="texto--color">Idiomas: Explora Mi Multilingüismo</span>
+        <span className="texto--color">{t("idiomas.Titulo")}</span>
       </h2>
       <p
         className={`idiomas--introduccion ${
           props.modoOscuro ? "texto--modoOscuro" : ""
         }`}
       >
-        Desde el español hasta el inglés y más allá, estos idiomas no solo son
-        herramientas de expresión, sino puentes hacia conexiones globales y
-        oportunidades diversas. Acompáñame en este recorrido donde la riqueza de
-        las palabras se convierte en un activo en un mundo cada vez más
-        conectado.
+        {t("idiomas.Introduccion")}
       </p>
       <div className="idiomas--container">{elementosIdiomas}</div>
     </section>

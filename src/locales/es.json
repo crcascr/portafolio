@@ -1,0 +1,77 @@
+{
+  "header": {
+    "Biografia": "Biografía",
+    "Proyectos": "Proyectos",
+    "Lenguajes": "Lenguajes",
+    "Idiomas": "Idiomas",
+    "Pasatiempos": "Pasatiempos",
+    "Cambio_idioma": "Cambiar idioma",
+    "Modo_oscuro": "Modo oscuro",
+    "Modo_claro": "Modo claro"
+  },
+  "intro": {
+    "Inicio": "¡Hola mundo! 👋 Soy",
+    "Complemento": "y este es mi portafolio."
+  },
+  "biografia": {
+    "Titulo": "Biografía: De Circuitos a Código",
+    "Parrafo_1": "Soy un ingeniero eléctrico que baila entre cables, circuitos y líneas de código. Mi superpoder radica en dominar los lenguajes de la web: PHP, JavaScript y MySQL. ¡Son como mi triángulo amoroso de la programación! Pero eso no es todo, también manejo CSS, React y React Native, agregando estilo y dinamismo a cada línea de código en la web o en dispositivos móviles.",
+    "Parrafo_2": "Con este arsenal de herramientas, creo aplicaciones web que no solo funcionan, ¡sino que también tienen estilo! Diseño experiencias que no solo resuelven problemas, ¡sino que también cautivan miradas! Además, me aventuro en el mundo del control de versiones con Git, manteniendo el código en forma y siempre listo para la siguiente actualización. Y cuando se trata de analizar y extraer datos, Python es mi compañero de confianza.",
+    "Parrafo_3": "Ah, y no puedo olvidar mencionar mi hazaña de recibir una patente. Mi trabajo de grado dio como fruto una herramienta increíble para el dimensionamiento de sistemas de baterías. ¡Una pequeña contribución para un mundo más energizado!",
+    "Parrafo_4": "Soy un profesional motivado con una buena dosis de habilidades de liderazgo y trabajo en equipo. Siempre listo para enfrentar nuevos desafíos y llevar las ideas al siguiente nivel. ¡Vamos más allá de los circuitos y creemos algo extraordinario juntos!"
+  },
+  "proyectos": {
+    "Titulo": "Proyectos: Código que Cuenta Historias",
+    "Introduccion": "¡Bienvenido a mi galería de proyectos! 💻🚀 Cada línea de código cuenta una historia de desafíos superados y soluciones creativas.",
+    "Ver_proyecto": "Ver proyecto",
+    "Ver_proyecto_en": "Ver proyecto en",
+    "Descripciones": {
+      "Vassarelly": "Un sitio web elegante y funcional con un sólido backend desarrollado en PHP y MySQL que facilita la gestión de servicios, citas, clientes, administradores, ubicaciones y profesionales. Su interfaz dinámica y responsive, construida con JavaScript y CSS, ofrece características como un mapa interactivo, formulario de contacto, sistema de reservas en línea y un práctico panel de administración. Alojado en un servidor seguro y optimizado para motores de búsqueda, es la plataforma perfecta para servicios de belleza y relajación.",
+      "Booking": "Una aplicación móvil funcional desarrollada con React, Bootstrap y CSS que facilita la reserva de habitaciones de hotel. Cuenta con una interfaz ágil y elegante optimizada para iOS y Android que muestra información clave de los hoteles y permite filtrar, buscar y ordenar de forma sencilla. La aplicación utiliza un modal elegante para mostrar más información de cada hotel. Construida con metodologías ágiles y tecnologías web progresivas.",
+      "Sumz": "Una práctica herramienta que te permite obtener resúmenes en español de tus artículos favoritos en línea, con solo unos pocos clics. Utiliza la potente API de RapidAPI Article Extractor and Summarizer para ofrecer un servicio de resumen de alta calidad.",
+      "Notas": "Una aplicación web que permite almacenar y organizar notas en una base de datos de Google Firebase. Las notas se ordenan automáticamente según la fecha de modificación.",
+      "Tenzies": "Un emocionante juego en el que el objetivo es igualar las caras de los 10 dados en el menor tiempo posible. El juego registra el tiempo de juego, el número de movimientos y el mejor tiempo, este último en el almacenamiento local. Si logras una nueva marca, se actualizará automáticamente.",
+      "Quizzical": "Un emocionante juego de preguntas que pondrá a prueba tus conocimientos y tu agudeza mental. Quizzical obtiene preguntas de diversas categorías y niveles de dificultad a través de la API de Open Trivia Database. Estas preguntas, junto con sus opciones de respuesta, se presentan de manera aleatoria en un desafío interactivo."
+    }
+  },
+  "lenguajes": {
+    "Titulo": "Lenguajes: Entre la Creatividad y la Funcionalidad",
+    "Introduccion": "¡Explora mi mundo de lenguajes de programación! 💻✨ Desde PHP hasta React, cada línea de código cuenta una historia única. ¡Descubre la magia donde la creatividad se encuentra con la funcionalidad!"
+  },
+  "idiomas": {
+    "Titulo": "Idiomas: Explora Mi Multilingüismo",
+    "Introduccion": "Desde el español hasta el inglés y más allá, estos idiomas no solo son herramientas de expresión, sino puentes hacia conexiones globales y oportunidades diversas. Acompáñame en este recorrido donde la riqueza de las palabras se convierte en un activo en un mundo cada vez más conectado.",
+    "Niveles": {
+      "Nativo": "Nativo",
+      "Intermedio": "Intermedio",
+      "Basico": "Básico"
+    },
+    "Idiomas": {
+      "ES": "Español",
+      "EN": "Inglés",
+      "IT": "Italiano"
+    }
+  },
+  "pasatiempos": {
+    "Titulo": "Pasatiempos: Explorando Mi Lado Personal",
+    "Introduccion": "Más allá del código y las líneas de diseño, mi vida se teje con una paleta de pasatiempos que reflejan mi personalidad y creatividad. Desde explorar nuevos rincones en mi bicicleta hasta sumergirme en los sabores con la cocina, estos pasatiempos no solo enriquecen mi vida, sino que también aportan una perspectiva única a mi enfoque creativo.",
+    "Pasatiempos": {
+      "Ciclismo_de_ruta": {
+        "nombre": "Ciclismo de ruta",
+        "descripcion": "El ciclismo de ruta no solo es mi escape activo, sino también la fuente de inspiración para superar desafíos y explorar nuevos horizontes."
+      },
+      "Cocinar": {
+        "nombre": "Cocinar",
+        "descripcion": "En mi cocina, la creatividad se mezcla con los sabores. Desde experimentar con nuevas recetas hasta recrear clásicos familiares, cada plato es una expresión de mi pasión por la diversidad gastronómica."
+      },
+      "Videojuegos": {
+        "nombre": "Videojuegos",
+        "descripcion": "Explorar mundos virtuales es mi forma de desconectar y sumergirme en narrativas fascinantes. Los videojuegos no solo son una fuente de entretenimiento, sino también una ventana a la innovación y al arte interactivo que me inspira en mi trabajo diario."
+      },
+      "Lectura": {
+        "nombre": "Lectura",
+        "descripcion": "Entre páginas se encuentra un universo de conocimiento y aventuras. La lectura es mi refugio intelectual, donde descubro nuevas perspectivas, desafío mi mente y me sumerjo en historias cautivadoras."
+      }
+    }
+  }
+}

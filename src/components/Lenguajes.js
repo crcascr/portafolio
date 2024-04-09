@@ -5,7 +5,11 @@ import css from "../images/lenguajes/css.svg";
 import react from "../images/lenguajes/react.svg";
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 function Lenguajes(props) {
+  const { t } = useTranslation();
+
   const elementosLenguajes = [
     { texto: "PHP", logo: php, color: "#8a9fe066" },
     { texto: "JavaScript", logo: javascript, color: "#f7df1e80" },
@@ -47,18 +51,14 @@ function Lenguajes(props) {
   return (
     <section id="lenguajes" className="lenguajes">
       <h2 className="lenguajes-titulo">
-        <span className="texto--color">
-          Lenguajes: Entre la Creatividad y la Funcionalidad
-        </span>
+        <span className="texto--color">{t("lenguajes.Titulo")}</span>
       </h2>
       <p
         className={`lenguajes--introduccion ${
           props.modoOscuro ? "texto--modoOscuro" : ""
         }`}
       >
-        ¡Explora mi mundo de lenguajes de programación! 💻✨ Desde PHP hasta
-        React, cada línea de código cuenta una historia única. ¡Descubre la
-        magia donde la creatividad se encuentra con la funcionalidad!
+        {t("lenguajes.Introduccion")}
       </p>
       <div className="lenguajes--container">{componentesLenguajes}</div>
     </section>

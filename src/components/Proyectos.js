@@ -2,7 +2,11 @@ import React from "react";
 import link from "../images/link.svg";
 import linkBlanco from "../images/link-blanco.svg";
 
+import { useTranslation } from "react-i18next";
+
 function Proyectos(props) {
+  const { t } = useTranslation();
+
   const elementosProyectos = [
     {
       carpeta: "vassarelly",
@@ -28,8 +32,7 @@ function Proyectos(props) {
       ],
       color: "#dcbbe966",
       hoverColor: "#dcbbe9",
-      descripcion:
-        "Un sitio web elegante y funcional con un sólido backend desarrollado en PHP y MySQL que facilita la gestión de servicios, citas, clientes, administradores, ubicaciones y profesionales. Su interfaz dinámica y responsive, construida con JavaScript y CSS, ofrece características como un mapa interactivo, formulario de contacto, sistema de reservas en línea y un práctico panel de administración. Alojado en un servidor seguro y optimizado para motores de búsqueda, es la plataforma perfecta para servicios de belleza y relajación.",
+      descripcion: t("proyectos.Descripciones.Vassarelly"),
     },
     {
       carpeta: "booking",
@@ -59,8 +62,7 @@ function Proyectos(props) {
       ],
       color: "#acc7c766",
       hoverColor: "#acc7c7",
-      descripcion:
-        "Una aplicación móvil funcional desarrollada con React, Bootstrap y CSS que facilita la reserva de habitaciones de hotel. Cuenta con una interfaz ágil y elegante optimizada para iOS y Android que muestra información clave de los hoteles y permite filtrar, buscar y ordenar de forma sencilla. La aplicación utiliza un modal elegante para mostrar más información de cada hotel. Construida con metodologías ágiles y tecnologías web progresivas.",
+      descripcion: t("proyectos.Descripciones.Booking"),
       extraLinks: [
         {
           nombre: "Android",
@@ -96,8 +98,7 @@ function Proyectos(props) {
       ],
       color: "#f59e0b66",
       hoverColor: "#f59e0b",
-      descripcion:
-        "Una práctica herramienta que te permite obtener resúmenes en español de tus artículos favoritos en línea, con solo unos pocos clics. Utiliza la potente API de RapidAPI Article Extractor and Summarizer para ofrecer un servicio de resumen de alta calidad.",
+      descripcion: t("proyectos.Descripciones.Sumz"),
     },
     {
       carpeta: "notas",
@@ -123,8 +124,7 @@ function Proyectos(props) {
       ],
       color: "#4a4e7466",
       hoverColor: "#4a4e74",
-      descripcion:
-        "Una aplicación web que permite almacenar y organizar notas en una base de datos de Google Firebase. Las notas se ordenan automáticamente según la fecha de modificación.",
+      descripcion: t("proyectos.Descripciones.Notas"),
     },
     {
       carpeta: "tenzies",
@@ -150,8 +150,7 @@ function Proyectos(props) {
       ],
       color: "#5035ff66",
       hoverColor: "#5035ff",
-      descripcion:
-        "Un emocionante juego en el que el objetivo es igualar las caras de los 10 dados en el menor tiempo posible. El juego registra el tiempo de juego, el número de movimientos y el mejor tiempo, este último en el almacenamiento local. Si logras una nueva marca, se actualizará automáticamente.",
+      descripcion: t("proyectos.Descripciones.Tenzies"),
     },
     {
       carpeta: "quizzical",
@@ -177,8 +176,7 @@ function Proyectos(props) {
       ],
       color: "#4d5b9e66",
       hoverColor: "#4d5b9e",
-      descripcion:
-        "Un emocionante juego de preguntas que pondrá a prueba tus conocimientos y tu agudeza mental. Quizzical obtiene preguntas de diversas categorías y niveles de dificultad a través de la API de Open Trivia Database. Estas preguntas, junto con sus opciones de respuesta, se presentan de manera aleatoria en un desafío interactivo.",
+      descripcion: t("proyectos.Descripciones.Quizzical"),
     },
   ];
 
@@ -224,7 +222,7 @@ function Proyectos(props) {
                 className="proyecto--link-icono"
                 src={props.modoOscuro ? linkBlanco : link}
               />
-              Ver proyecto
+              {t("proyectos.Ver_proyecto")}
             </a>
             {elemento.extraLinks && (
               <>
@@ -243,7 +241,7 @@ function Proyectos(props) {
                       className="proyecto--link-icono"
                       src={props.modoOscuro ? linkBlanco : link}
                     />
-                    {`Ver proyecto en ${linkExtra.nombre}`}
+                    {t("proyectos.Ver_proyecto_en")} {linkExtra.nombre}
                   </a>
                 ))}
               </>

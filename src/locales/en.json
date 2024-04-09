@@ -1,0 +1,77 @@
+{
+  "header": {
+    "Biografia": "Biography",
+    "Proyectos": "Projects",
+    "Lenguajes": "Langs",
+    "Idiomas": "Languages",
+    "Pasatiempos": "Hobbies",
+    "Cambio_idioma": "Change language",
+    "Modo_oscuro": "Dark mode",
+    "Modo_claro": "Light mode"
+  },
+  "intro": {
+    "Inicio": "Hello world! 👋 I'm",
+    "Complemento": "and this is my portfolio."
+  },
+  "biografia": {
+    "Titulo": "Biography: From Circuits to Code",
+    "Parrafo_1": "I am an electrical engineer who dances among wires, circuits and lines of code. My superpower lies in mastering the languages of the web: PHP, JavaScript and MySQL - they're like my programming love triangle! But that's not all, I also handle CSS, React and React Native, adding style and dynamism to every line of code on the web or mobile devices.",
+    "Parrafo_2": "With this arsenal of tools, I create web applications that not only work, but also look stylish! I design experiences that not only solve problems, but also captivate eyeballs! In addition, I venture into the world of version control with Git, keeping code in shape and always ready for the next update. And when it comes to analyzing and extracting data, Python is my trusted companion.",
+    "Parrafo_3": "Oh, and I can't forget to mention my feat of receiving a patent. My degree work resulted in an incredible tool for battery system sizing - a small contribution to a more energized world!",
+    "Parrafo_4": "I am a motivated professional with a good dose of leadership skills and teamwork. Always ready to face new challenges and take ideas to the next level, let's go beyond the circuits and create something extraordinary together!"
+  },
+  "proyectos": {
+    "Titulo": "Projects: Code that Tells Stories",
+    "Introduccion": "Welcome to my gallery of projects! 💻🚀 Each line of code tells a story of challenges overcome and creative solutions.",
+    "Ver_proyecto": "View project",
+    "Ver_proyecto_en": "View project in",
+    "Descripciones": {
+      "Vassarelly": "An elegant and functional website with a solid backend developed in PHP and MySQL that facilitates the management of services, appointments, clients, administrators, locations and professionals. Its dynamic and responsive interface, built with JavaScript and CSS, offers features such as an interactive map, contact form, online booking system and a practical administration panel. Hosted on a secure server and optimized for search engines, it is the perfect platform for beauty and relaxation services.",
+      "Booking": "A functional mobile application developed with React, Bootstrap and CSS that facilitates the booking of hotel rooms. It features a sleek and elegant interface optimized for iOS and Android that displays key hotel information and allows easy filtering, searching and sorting. The app uses an elegant modal to display more information about each hotel. Built with agile methodologies and progressive web technologies.",
+      "Sumz": "A handy tool that allows you to get Spanish summaries of your favorite articles online with just a few clicks. It uses RapidAPI's powerful Article Extractor and Summarizer API to provide a high quality summarization service.",
+      "Notas": "A web application that allows you to store and organize notes in a Google Firebase database. Notes are automatically sorted by date of modification.",
+      "Tenzies": "An exciting game in which the goal is to match the faces of the 10 dice in the shortest possible time. The game records the playing time, the number of moves and the best time, the latter in local storage. If you achieve a new mark, it will be automatically updated.",
+      "Quizzical": "An exciting quiz game that will test your knowledge and mental acuity. Quizzical fetches questions of various categories and difficulty levels through the Open Trivia Database API. These questions, along with their answer options, are presented randomly in an interactive challenge."
+    }
+  },
+  "lenguajes": {
+    "Titulo": "Languages: Between Creativity and Functionality",
+    "Introduccion": "Explore my world of programming languages! 💻✨ From PHP to React, every line of code tells a unique story. Discover the magic where creativity meets functionality!"
+  },
+  "idiomas": {
+    "Titulo": "Languages: Explore My Multilingualism",
+    "Introduccion": "From Spanish to English and beyond, these languages are not only tools of expression, but bridges to global connections and diverse opportunities. Join me on this journey where the richness of words becomes an asset in an everyday more connected world.",
+    "Niveles": {
+      "Nativo": "Native",
+      "Intermedio": "Intermediate",
+      "Basico": "Basic"
+    },
+    "Idiomas": {
+      "ES": "Spanish",
+      "EN": "English",
+      "IT": "Italian"
+    }
+  },
+  "pasatiempos": {
+    "Titulo": "Hobbies: Exploring My Personal Side",
+    "Introduccion": "Beyond code and design lines, my life is woven with a palette of hobbies that reflect my personality and creativity. From exploring new corners on my bike to immersing myself in flavors with cooking, these hobbies not only enrich my life, but also bring a unique perspective to my creative approach.",
+    "Pasatiempos": {
+      "Ciclismo_de_ruta": {
+        "nombre": "Road cycling",
+        "descripcion": "Road cycling is not only my active escape, but also the source of inspiration to overcome challenges and explore new horizons."
+      },
+      "Cocinar": {
+        "nombre": "Cooking",
+        "descripcion": "In my kitchen, creativity blends with flavors. From experimenting with new recipes to recreating familiar classics, each dish is an expression of my passion for gastronomic diversity."
+      },
+      "Videojuegos": {
+        "nombre": "Videogames",
+        "descripcion": "Exploring virtual worlds is my way of disconnecting and immersing myself in fascinating narratives. Video games are not only a source of entertainment, but also a window to innovation and interactive art that inspires me in my daily work."
+      },
+      "Lectura": {
+        "nombre": "Reading",
+        "descripcion": "Between pages is a universe of knowledge and adventures. Reading is my intellectual refuge, where I discover new perspectives, challenge my mind, and immerse myself in captivating stories."
+      }
+    }
+  }
+}

@@ -6,7 +6,10 @@ import x from "../images/redes/x.svg";
 import xBlanco from "../images/redes/x-blanco.svg";
 import instagram from "../images/redes/instagram.svg";
 
+import { useTranslation } from "react-i18next";
+
 function Intro(props) {
+  const { t } = useTranslation();
   const objetoRedes = [
     {
       nombre: "LinkedIn",
@@ -32,8 +35,15 @@ function Intro(props) {
 
   const elementosRedes = objetoRedes.map((red, index) => {
     return (
-      <div className={`intro--red ${props.modoOscuro?`${red.nombre.toLowerCase()}Oscuro`:`${red.nombre.toLowerCase()}`} `} key={index} onClick={()=>
-        window.open(red.enlace,"_blank","noopener,noreferrer")}>
+      <div
+        className={`intro--red ${
+          props.modoOscuro
+            ? `${red.nombre.toLowerCase()}Oscuro`
+            : `${red.nombre.toLowerCase()}`
+        } `}
+        key={index}
+        onClick={() => window.open(red.enlace, "_blank", "noopener,noreferrer")}
+      >
         <img
           alt={`Logo de ${red.nombre}`}
           key={index}
@@ -67,9 +77,9 @@ function Intro(props) {
           props.modoOscuro ? "texto--modoOscuro" : ""
         }`}
       >
-        ¡Hola mundo! 👋 Soy{" "}
-        <span className="texto--color">Cristian Castillo</span> y este es mi
-        portafolio.
+        {t("intro.Inicio")}{" "}
+        <span className="texto--color">Cristian Castillo</span>{" "}
+        {t("intro.Complemento")}
       </h1>
     </div>
   );
