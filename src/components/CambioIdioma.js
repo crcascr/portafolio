@@ -9,8 +9,6 @@ function CambioIdioma(darkMode) {
     setIdiomaActual(idioma);
   };
 
-  console.log(darkMode.darkMode);
-
   return (
     <div>
       <div className="switch">

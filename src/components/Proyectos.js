@@ -4,6 +4,13 @@ import linkBlanco from "../images/link-blanco.svg";
 
 import { useTranslation } from "react-i18next";
 
+import { register } from "swiper/element/bundle";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+register();
+
 function Proyectos(props) {
   const { t } = useTranslation();
 
@@ -33,6 +40,7 @@ function Proyectos(props) {
       color: "#dcbbe966",
       hoverColor: "#dcbbe9",
       descripcion: t("proyectos.Descripciones.Vassarelly"),
+      mobile_app: false,
     },
     {
       carpeta: "booking",
@@ -63,6 +71,7 @@ function Proyectos(props) {
       color: "#acc7c766",
       hoverColor: "#acc7c7",
       descripcion: t("proyectos.Descripciones.Booking"),
+      mobile_app: true,
       extraLinks: [
         {
           nombre: "Android",
@@ -99,6 +108,7 @@ function Proyectos(props) {
       color: "#f59e0b66",
       hoverColor: "#f59e0b",
       descripcion: t("proyectos.Descripciones.Sumz"),
+      mobile_app: false,
     },
     {
       carpeta: "notas",
@@ -125,6 +135,7 @@ function Proyectos(props) {
       color: "#4a4e7466",
       hoverColor: "#4a4e74",
       descripcion: t("proyectos.Descripciones.Notas"),
+      mobile_app: false,
     },
     {
       carpeta: "tenzies",
@@ -151,6 +162,7 @@ function Proyectos(props) {
       color: "#5035ff66",
       hoverColor: "#5035ff",
       descripcion: t("proyectos.Descripciones.Tenzies"),
+      mobile_app: false,
     },
     {
       carpeta: "quizzical",
@@ -177,11 +189,38 @@ function Proyectos(props) {
       color: "#4d5b9e66",
       hoverColor: "#4d5b9e",
       descripcion: t("proyectos.Descripciones.Quizzical"),
+      mobile_app: false,
     },
   ];
 
   const [proyectoHov, setProyectoHov] = React.useState(null);
   const [tarjetaProyectoHov, setTarjetaProyectoHov] = React.useState(null);
+
+  const SwiperComponent = ({ elemento }) => {
+    return (
+      <Swiper
+        navigation
+        pagination
+        slidesPerView={elemento.mobile_app ? 3 : 1}
+        speed={500}
+        loop
+        autoplay
+        effect="slide"
+      >
+        {elemento.imagenes.map((imagen, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={imagen.src}
+              alt={imagen.nombre}
+              className="proyecto--imagen"
+              key={imagen.nombre}
+              onClick={() => window.open(elemento.link, "_blank")}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    );
+  };
 
   const componentesProyectos = elementosProyectos.map((elemento, index) => {
     return (
@@ -194,7 +233,7 @@ function Proyectos(props) {
           style={{
             backgroundColor: elemento.color,
             boxShadow:
-              tarjetaProyectoHov === index
+              tarjetaProyectoHov === index && window.innerWidth > 767
                 ? `0 0 40px 10px ${elemento.hoverColor}`
                 : "",
           }}
@@ -248,27 +287,7 @@ function Proyectos(props) {
             )}
           </div>
           <div className={`proyecto--imagenes`}>
-            {elemento.imagenes.map((imagen) => (
-              <img
-                onMouseEnter={() => setProyectoHov(index)}
-                onMouseLeave={() => setProyectoHov(null)}
-                onClick={() =>
-                  window.open(imagen.src, "_blank", "noopener,noreferrer")
-                }
-                key={imagen.nombre}
-                src={imagen.src}
-                alt={`Imagen del proyecto ${elemento.carpeta}`}
-                style={{
-                  transform:
-                    proyectoHov === index
-                      ? `translateX(-${elemento.imagenes.length * 70.5}%)`
-                      : "",
-                }}
-                className={`proyecto--imagen ${
-                  proyectoHov === index ? "proyecto--hover" : ""
-                }`}
-              />
-            ))}
+            <SwiperComponent elemento={elemento} />
           </div>
         </div>
       </div>

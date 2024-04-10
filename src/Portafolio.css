@@ -156,7 +156,7 @@ body * {
   width: 90%;
 }
 
-.intro--titulo{
+.intro--titulo {
   text-align: center;
 }
 
@@ -205,11 +205,16 @@ body * {
 }
 
 .intro--red::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 4rem;
   height: 4rem;
-  background-color: rgba(255, 255, 255, 0.5); /* Puedes ajustar el color de fondo */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Puedes ajustar el color de fondo */
   border-radius: 30%;
   transform: scale(0);
   transition: transform 0.4s ease-out;
@@ -217,35 +222,35 @@ body * {
   z-index: 0;
 }
 
-.linkedin::before{
+.linkedin::before {
   background-color: #00a0dc80;
 }
 
-.linkedinOscuro::before{
+.linkedinOscuro::before {
   background-color: #007bb580;
 }
 
-.github::before{
-  background-color: #24292e80
+.github::before {
+  background-color: #24292e80;
 }
 
-.githubOscuro::before{
-  background-color: #ffffff80
+.githubOscuro::before {
+  background-color: #ffffff80;
 }
 
-.x::before{
+.x::before {
   background-color: #1da1f280;
 }
 
-.xOscuro::before{
+.xOscuro::before {
   background-color: #5da9dd80;
 }
 
-.instagram::before{
+.instagram::before {
   background-color: #bc2a8d80;
 }
 
-.instagramOscuro::before{
+.instagramOscuro::before {
   background-color: #e1306c80;
 }
 
@@ -267,11 +272,11 @@ body * {
   color: transparent;
 }
 
-.biografia--texto{
+.biografia--texto {
   text-align: justify;
 }
 
-.proyectos--container{
+.proyectos--container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -327,7 +332,28 @@ body * {
   cursor: default;
 }
 
+.proyecto--imagenes {
+  display: flex;
+  overflow-x: auto;
+  padding: 1.5rem 0rem;
+  align-items: center;
+}
+
+.proyecto--imagen {
+  width: auto;
+  transition: transform 15s linear;
+  border-radius: 1rem;
+  margin: 0rem 1.5rem;
+  cursor: pointer;
+  opacity: 0.85;
+  height: 60vh;
+}
+
 @media only screen and (max-width: 767px) {
+  .paginaContainer h2{
+    text-align: center;
+  }
+
   .proyecto--container {
     display: flex;
     flex-wrap: wrap;
@@ -337,21 +363,17 @@ body * {
     margin: 0.5rem;
     width: auto;
   }
-}
 
-.proyecto--imagenes {
-  display: flex;
-  overflow-x: auto;
-  padding: 1.5rem 0rem;
-}
+  .proyecto--imagenes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.proyecto--imagen {
-  width: 70%;
-  transition: transform 15s linear;
-  border-radius: 1rem;
-  margin: 0rem 1.5rem;
-  cursor: pointer;
-  opacity: 0.85;
+  .proyecto--imagen {
+    height: 20vh;
+    margin: 0.5rem;
+    transition: none;
+  }
 }
 
 .proyecto--link {
@@ -375,7 +397,7 @@ body * {
   justify-content: space-evenly;
 }
 
-.idiomas--introduccion{
+.idiomas--introduccion {
   text-align: justify;
 }
 
@@ -385,34 +407,34 @@ body * {
   flex-wrap: wrap;
 }
 
-.idiomas--idioma-texto{
+.idiomas--idioma-texto {
   text-align: center;
 }
 
-.pasatiempos--container{
+.pasatiempos--container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.pasatiempos--introduccion{
+.pasatiempos--introduccion {
   text-align: justify;
 }
 
-.pasatiempos--pasatiempo-container{
+.pasatiempos--pasatiempo-container {
   width: 20rem;
   height: auto;
 }
 
-.pasatiempos--pasatiempo-inicio{
+.pasatiempos--pasatiempo-inicio {
   text-align: center;
 }
 
-.pasatiempos--pasatiempo-titulo{
+.pasatiempos--pasatiempo-titulo {
   margin-top: 0;
 }
 
-.pasatiempos--pasatiempo-descripcion{
+.pasatiempos--pasatiempo-descripcion {
   text-align: justify;
 }

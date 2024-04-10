@@ -2,12 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Portafolio.css';
 import reportWebVitals from './reportWebVitals';
-import i18n from './i18n';
 
 import Portafolio from './Portafolio';
-const userLanguage=navigator.language.split('-')[0];
-console.log(userLanguage)
-//i18n.changeLanguage(userLanguage);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
