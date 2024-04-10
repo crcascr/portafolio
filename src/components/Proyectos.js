@@ -16,6 +16,59 @@ function Proyectos(props) {
 
   const elementosProyectos = [
     {
+      carpeta: "movies",
+      titulo: "Movies App",
+      link: "https://github.com/crcascr/movies-app-native",
+      imagenes: [
+        {
+          nombre: "movies1",
+          src: require("../images/proyectos/movies/movies1.webp"),
+        },
+        {
+          nombre: "movies2",
+          src: require("../images/proyectos/movies/movies2.webp"),
+        },
+        {
+          nombre: "movies3",
+          src: require("../images/proyectos/movies/movies3.webp"),
+        },
+        {
+          nombre: "movies4",
+          src: require("../images/proyectos/movies/movies4.webp"),
+        },
+        {
+          nombre: "movies5",
+          src: require("../images/proyectos/movies/movies5.webp"),
+        },
+        {
+          nombre: "movies6",
+          src: require("../images/proyectos/movies/movies6.webp"),
+        },
+        {
+          nombre: "movies7",
+          src: require("../images/proyectos/movies/movies7.webp"),
+        },
+        {
+          nombre: "movies8",
+          src: require("../images/proyectos/movies/movies8.webp"),
+        },
+      ],
+      color: "#92a2b966",
+      hoverColor: "#92a2b9",
+      descripcion: t("proyectos.Descripciones.Movies"),
+      mobile_app: true,
+      extraLinks: [
+        {
+          nombre: "Android",
+          link: "https://appetize.io/app/mkxt23ipqijorctqxfynwp6ufm?device=pixel7pro&osVersion=13.0",
+        },
+        {
+          nombre: "iOS",
+          link: "https://appetize.io/app/ehlpqyxdjmdvgnuz4nmeo3agye?device=iphone15promax&osVersion=17.2",
+        },
+      ],
+    },
+    {
       carpeta: "vassarelly",
       titulo: "Vassarelly",
       link: "https://vassarelly.com/",
@@ -79,7 +132,7 @@ function Proyectos(props) {
         },
         {
           nombre: "iOS",
-          link: "https://appetize.io/app/qhz6wvnql3gaqxsgcnocfc2wsu?device=iphone15promax&osVersion=17.0",
+          link: "https://appetize.io/app/qhz6wvnql3gaqxsgcnocfc2wsu?device=iphone15promax&osVersion=17.2",
         },
       ],
     },
