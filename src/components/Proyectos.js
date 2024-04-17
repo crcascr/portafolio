@@ -4,6 +4,8 @@ import linkBlanco from "../images/link-blanco.svg";
 
 import { useTranslation } from "react-i18next";
 
+import { motion } from "framer-motion";
+
 import { register } from "swiper/element/bundle";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -277,73 +279,82 @@ function Proyectos(props) {
 
   const componentesProyectos = elementosProyectos.map((elemento, index) => {
     return (
-      <div className={`proyecto--${elemento.carpeta}`} key={elemento.carpeta}>
-        <h3 className={`${props.modoOscuro ? "texto--modoOscuro" : ""}`}>
-          {elemento.titulo}
-        </h3>
-        <div
-          className="proyecto--container"
-          style={{
-            backgroundColor: elemento.color,
-            boxShadow:
-              tarjetaProyectoHov === index && window.innerWidth > 767
-                ? `0 0 40px 10px ${elemento.hoverColor}`
-                : "",
-          }}
-          onMouseEnter={() => setTarjetaProyectoHov(index)}
-          onMouseLeave={() => setTarjetaProyectoHov(null)}
-        >
-          <div className="proyecto--descripcion">
-            <p
-              className={`proyecto--descripcion-texto ${
-                props.modoOscuro ? "texto--modoOscuro" : ""
-              }`}
-            >
-              {elemento.descripcion}
-            </p>
-            <a
-              className={`proyecto--link ${
-                props.modoOscuro ? "texto--modoOscuro" : ""
-              }`}
-              href={elemento.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt="Icono enlace"
-                className="proyecto--link-icono"
-                src={props.modoOscuro ? linkBlanco : link}
-              />
-              {t("proyectos.Ver_proyecto")}
-            </a>
-            {elemento.extraLinks && (
-              <>
-                {elemento.extraLinks.map((linkExtra, indexLink) => (
-                  <a
-                    key={indexLink}
-                    className={`proyecto--link ${
-                      props.modoOscuro ? "texto--modoOscuro" : ""
-                    }`}
-                    href={linkExtra.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      alt="Icono enlace"
-                      className="proyecto--link-icono"
-                      src={props.modoOscuro ? linkBlanco : link}
-                    />
-                    {t("proyectos.Ver_proyecto_en")} {linkExtra.nombre}
-                  </a>
-                ))}
-              </>
-            )}
-          </div>
-          <div className={`proyecto--imagenes`}>
-            <SwiperComponent elemento={elemento} />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 50 }}
+        key={elemento.carpeta}
+      >
+        <div className={`proyecto--${elemento.carpeta}`}>
+          <h3 className={`${props.modoOscuro ? "texto--modoOscuro" : ""}`}>
+            {elemento.titulo}
+          </h3>
+          <div
+            className="proyecto--container"
+            style={{
+              backgroundColor: elemento.color,
+              boxShadow:
+                tarjetaProyectoHov === index && window.innerWidth > 767
+                  ? `0 0 40px 10px ${elemento.hoverColor}`
+                  : "",
+            }}
+            onMouseEnter={() => setTarjetaProyectoHov(index)}
+            onMouseLeave={() => setTarjetaProyectoHov(null)}
+          >
+            <div className="proyecto--descripcion">
+              <p
+                className={`proyecto--descripcion-texto ${
+                  props.modoOscuro ? "texto--modoOscuro" : ""
+                }`}
+              >
+                {elemento.descripcion}
+              </p>
+              <a
+                className={`proyecto--link ${
+                  props.modoOscuro ? "texto--modoOscuro" : ""
+                }`}
+                href={elemento.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  alt="Icono enlace"
+                  className="proyecto--link-icono"
+                  src={props.modoOscuro ? linkBlanco : link}
+                />
+                {t("proyectos.Ver_proyecto")}
+              </a>
+              {elemento.extraLinks && (
+                <>
+                  {elemento.extraLinks.map((linkExtra, indexLink) => (
+                    <a
+                      key={indexLink}
+                      className={`proyecto--link ${
+                        props.modoOscuro ? "texto--modoOscuro" : ""
+                      }`}
+                      href={linkExtra.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        alt="Icono enlace"
+                        className="proyecto--link-icono"
+                        src={props.modoOscuro ? linkBlanco : link}
+                      />
+                      {t("proyectos.Ver_proyecto_en")} {linkExtra.nombre}
+                    </a>
+                  ))}
+                </>
+              )}
+            </div>
+            <div className={`proyecto--imagenes`}>
+              <SwiperComponent elemento={elemento} />
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   });
   return (

@@ -8,6 +8,7 @@ import Pasatiempos from "./components/Pasatiempos";
 import Footer from "./components/Footer";
 import React from "react";
 
+import { motion } from "framer-motion";
 function Portafolio() {
   const [modoOscuro, setModoOscuro] = React.useState(false);
 
@@ -37,12 +38,66 @@ function Portafolio() {
       </div>
       <div className="paginaContainer--contenido">
         <Header cambiarModo={cambiarModo} modoOscuro={modoOscuro} />
-        <Intro modoOscuro={modoOscuro} />
-        <Biografia modoOscuro={modoOscuro} />
-        <Proyectos modoOscuro={modoOscuro} />
-        <Lenguajes modoOscuro={modoOscuro} />
-        <Idiomas modoOscuro={modoOscuro} />
-        <Pasatiempos modoOscuro={modoOscuro} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Intro modoOscuro={modoOscuro} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Biografia modoOscuro={modoOscuro} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Proyectos modoOscuro={modoOscuro} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Lenguajes modoOscuro={modoOscuro} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Idiomas modoOscuro={modoOscuro} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <Pasatiempos modoOscuro={modoOscuro} />
+        </motion.div>
+
         <Footer />
       </div>
     </main>

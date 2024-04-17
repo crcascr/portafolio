@@ -8,6 +8,7 @@ import lectura from "../images/pasatiempos/lectura.svg";
 import lecturaBlanco from "../images/pasatiempos/lecturaBlanco.svg";
 
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function Pasatiempos(props) {
   const { t } = useTranslation();
@@ -37,30 +38,39 @@ function Pasatiempos(props) {
 
   const elementosPasatiempos = objetoPasatiempos.map((pasatiempo, index) => {
     return (
-      <div className="pasatiempos--pasatiempo-container" key={index}>
-        <div className="pasatiempos--pasatiempo-inicio">
-          <img
-            className="pasatiempos--pasatiempo-icono"
-            alt={`Icono ${pasatiempo.nombre}`}
-            key={index}
-            src={pasatiempo.icono}
-          />
-          <h3
-            className={`pasatiempos--pasatiempo-titulo ${
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 50 }}
+      >
+        <div className="pasatiempos--pasatiempo-container" key={index}>
+          <div className="pasatiempos--pasatiempo-inicio">
+            <img
+              className="pasatiempos--pasatiempo-icono"
+              alt={`Icono ${pasatiempo.nombre}`}
+              key={index}
+              src={pasatiempo.icono}
+            />
+            <h3
+              className={`pasatiempos--pasatiempo-titulo ${
+                props.modoOscuro ? "texto--modoOscuro" : ""
+              }`}
+            >
+              {pasatiempo.nombre}
+            </h3>
+          </div>
+          <p
+            className={`pasatiempos--pasatiempo-descripcion ${
               props.modoOscuro ? "texto--modoOscuro" : ""
             }`}
           >
-            {pasatiempo.nombre}
-          </h3>
+            {pasatiempo.descripcion}
+          </p>
         </div>
-        <p
-          className={`pasatiempos--pasatiempo-descripcion ${
-            props.modoOscuro ? "texto--modoOscuro" : ""
-          }`}
-        >
-          {pasatiempo.descripcion}
-        </p>
-      </div>
+      </motion.div>
     );
   });
 
