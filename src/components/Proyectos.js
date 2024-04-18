@@ -1,6 +1,4 @@
 import React from "react";
-import link from "../images/link.svg";
-import linkBlanco from "../images/link-blanco.svg";
 
 import { useTranslation } from "react-i18next";
 
@@ -12,6 +10,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 register();
+
+export const Link = ({ fillColor }) => (
+  <svg
+    role="img"
+    height="40px"
+    width="40px"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5"
+      stroke={fillColor}
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
 
 function Proyectos(props) {
   const { t } = useTranslation();
@@ -248,7 +264,6 @@ function Proyectos(props) {
     },
   ];
 
-  const [proyectoHov, setProyectoHov] = React.useState(null);
   const [tarjetaProyectoHov, setTarjetaProyectoHov] = React.useState(null);
 
   const SwiperComponent = ({ elemento }) => {
@@ -319,11 +334,9 @@ function Proyectos(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  alt="Icono enlace"
-                  className="proyecto--link-icono"
-                  src={props.modoOscuro ? linkBlanco : link}
-                />
+                <div className="proyecto--link-icono-container">
+                  <Link fillColor={props.modoOscuro ? "white" : "#0e141b"} />
+                </div>
                 {t("proyectos.Ver_proyecto")}
               </a>
               {elemento.extraLinks && (
@@ -338,11 +351,11 @@ function Proyectos(props) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img
-                        alt="Icono enlace"
-                        className="proyecto--link-icono"
-                        src={props.modoOscuro ? linkBlanco : link}
-                      />
+                      <div className="proyecto--link-icono-container">
+                        <Link
+                          fillColor={props.modoOscuro ? "white" : "#0e141b"}
+                        />
+                      </div>
                       {t("proyectos.Ver_proyecto_en")} {linkExtra.nombre}
                     </a>
                   ))}

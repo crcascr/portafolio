@@ -1,11 +1,56 @@
-import nativo from "../images/idiomas/nativo.svg";
-import nativoBlanco from "../images/idiomas/nativo-blanco.svg";
-import intermedio from "../images/idiomas/intermedio.svg";
-import intermedioBlanco from "../images/idiomas/intermedio-blanco.svg";
-import basico from "../images/idiomas/basico.svg";
-import basicoBlanco from "../images/idiomas/basico-blanco.svg";
-
 import { useTranslation } from "react-i18next";
+
+export const Nativo = ({ fillColor }) => (
+  <svg
+    role="img"
+    height="64px"
+    width="64px"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={fillColor}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M2 20h.01" /> <path d="M7 20v-4" /> <path d="M12 20v-8" />{" "}
+    <path d="M17 20V8" /> <path d="M22 4v16" />
+  </svg>
+);
+
+export const Intermedio = ({ fillColor }) => (
+  <svg
+    role="img"
+    height="64px"
+    width="64px"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={fillColor}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M2 20h.01" /> <path d="M7 20v-4" /> <path d="M12 20v-8" />
+  </svg>
+);
+
+export const Basico = ({ fillColor }) => (
+  <svg
+    role="img"
+    height="64px"
+    width="64px"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={fillColor}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M2 20h.01" /> <path d="M7 20v-4" />
+  </svg>
+);
 
 function Idiomas(props) {
   const { t } = useTranslation();
@@ -14,29 +59,29 @@ function Idiomas(props) {
     {
       idioma: t("idiomas.Idiomas.ES"),
       nivel: t("idiomas.Niveles.Nativo"),
-      icono: `${props.modoOscuro ? nativoBlanco : nativo}`,
     },
     {
       idioma: t("idiomas.Idiomas.EN"),
       nivel: t("idiomas.Niveles.Intermedio"),
-      icono: `${props.modoOscuro ? intermedioBlanco : intermedio}`,
     },
     {
       idioma: t("idiomas.Idiomas.IT"),
       nivel: t("idiomas.Niveles.Basico"),
-      icono: `${props.modoOscuro ? basicoBlanco : basico}`,
     },
   ];
 
   const elementosIdiomas = objetoIdiomas.map((idioma, index) => {
     return (
       <div className="idiomas--idioma-container" key={index}>
-        <img
-          className="idiomas--idioma-icono"
-          alt={`Icono nivel ${idioma.nivel} del idioma ${idioma.idioma}`}
-          key={index}
-          src={idioma.icono}
-        />
+        <div className="idiomas--idioma-icono-container">
+          {idioma.nivel === t("idiomas.Niveles.Nativo") ? (
+            <Nativo fillColor={props.modoOscuro ? "white" : "#0e141b"} />
+          ) : idioma.nivel === t("idiomas.Niveles.Intermedio") ? (
+            <Intermedio fillColor={props.modoOscuro ? "white" : "#0e141b"} />
+          ) : idioma.nivel === t("idiomas.Niveles.Basico") ? (
+            <Basico fillColor={props.modoOscuro ? "white" : "#0e141b"} />
+          ) : null}
+        </div>
         <h3
           className={`idiomas--idioma-texto ${
             props.modoOscuro ? "texto--modoOscuro" : ""
