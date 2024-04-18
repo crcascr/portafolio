@@ -94,6 +94,25 @@ export const Instagram = ({ fillColor }) => (
   </svg>
 );
 
+export const ScrollDown = ({ fillColor }) => (
+  <svg
+    role="img"
+    height="48px"
+    width="48px"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill={fillColor}
+    className="scroll-down--icon"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289Z"
+      fill={fillColor}
+    ></path>
+  </svg>
+);
+
 function Intro(props) {
   const { t } = useTranslation();
   const objetoRedes = [
@@ -146,7 +165,12 @@ function Intro(props) {
       <div className="intro--containerFoto">
         <div className="intro--imagen">
           <div className="intro--blob">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              viewBox="0 0 200 200"
+              height="180px"
+              width="180px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fill="#43C494"
                 d="M47.5,-38.7C62.7,-18.9,76.8,0.9,74.1,18.6C71.4,36.2,51.9,51.7,30.4,61.5C8.8,71.3,-14.7,75.4,-31.8,66.9C-49,58.3,-59.7,37.2,-65,14.6C-70.4,-8,-70.4,-32.1,-58.7,-51.1C-46.9,-70.1,-23.5,-83.9,-3.6,-81C16.2,-78.1,32.4,-58.4,47.5,-38.7Z"
@@ -168,6 +192,9 @@ function Intro(props) {
         <span className="texto--color">Cristian Castillo Cruz</span>{" "}
         {t("intro.Complemento")}
       </h1>
+      <a className="scroll-down" href="#biografia">
+        <ScrollDown fillColor={props.modoOscuro ? "white" : "#0e141b"} />
+      </a>
     </div>
   );
 }
