@@ -292,6 +292,8 @@ function Proyectos(props) {
     );
   };
 
+  const escritorio=window.innerWidth > 767
+
   const componentesProyectos = elementosProyectos.map((elemento, index) => {
     return (
       <motion.div
@@ -311,9 +313,9 @@ function Proyectos(props) {
             style={{
               backgroundColor: elemento.color,
               boxShadow:
-                tarjetaProyectoHov === index && window.innerWidth > 767
+                tarjetaProyectoHov === index && escritorio
                   ? `0 0 40px 10px ${elemento.hoverColor}`
-                  : "",
+                  : "0 0 40px 10px transparent",
             }}
             onMouseEnter={() => setTarjetaProyectoHov(index)}
             onMouseLeave={() => setTarjetaProyectoHov(null)}
