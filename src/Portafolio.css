@@ -63,10 +63,29 @@ body * {
   font-size: 2.05rem;
 }
 
-.navPortafolio {
+.navContainer {
+  display: flex;
   position: fixed;
-  top: 1rem;
   z-index: 2;
+  left: 5px;
+  right: 5px;
+  flex-direction: row;
+}
+
+.nav--toggler {
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding-top: 15px;
+  height: 32px;
+}
+
+.navPortafolio {
+  display: flex;
+  position: relative;
   width: 100%;
 }
 
@@ -146,6 +165,32 @@ body * {
   z-index: 10;
   background: linear-gradient(90deg, #20a97b, #0f6d51);
   mix-blend-mode: color;
+}
+
+@media only screen and (max-width: 767px) {
+  .navContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav--toggler {
+    justify-content: flex-start;
+  }
+
+  .nav--links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav--link {
+    flex-direction: column;
+    padding: 0;
+    border-radius: 1rem;
+  }
+
+  .nav--span {
+    border-radius: 1rem;
+  }
 }
 
 .intro {

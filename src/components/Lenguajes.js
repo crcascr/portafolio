@@ -6,6 +6,7 @@ import react from "../images/lenguajes/react.svg";
 import React from "react";
 
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 function Lenguajes(props) {
   const { t } = useTranslation();
@@ -22,29 +23,39 @@ function Lenguajes(props) {
 
   const componentesLenguajes = elementosLenguajes.map((elemento, index) => {
     return (
-      <div
-        className="lenguajes--lenguaje"
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 50 }}
         key={elemento.texto}
-        onMouseEnter={() => setLenguajeHov(index)}
-        onMouseLeave={() => setLenguajeHov(null)}
-        style={{
-          backgroundColor: lenguajeHov === index ? elemento.color : "",
-          boxShadow: lenguajeHov === index ? `0 0 20px ${elemento.color}` : "",
-        }}
       >
-        <img
-          src={elemento.logo}
-          className="lenguajes--logo"
-          alt={`Icono ${elemento.texto}`}
-        />
-        <p
-          className={`lenguajes--nombre ${
-            props.modoOscuro ? "texto--modoOscuro" : ""
-          }`}
+        <div
+          className="lenguajes--lenguaje"
+          key={elemento.texto}
+          onMouseEnter={() => setLenguajeHov(index)}
+          onMouseLeave={() => setLenguajeHov(null)}
+          style={{
+            backgroundColor: lenguajeHov === index ? elemento.color : "",
+            boxShadow:
+              lenguajeHov === index ? `0 0 20px ${elemento.color}` : "",
+          }}
         >
-          {elemento.texto}
-        </p>
-      </div>
+          <img
+            src={elemento.logo}
+            className="lenguajes--logo"
+            alt={`Icono ${elemento.texto}`}
+          />
+          <p
+            className={`lenguajes--nombre ${
+              props.modoOscuro ? "texto--modoOscuro" : ""
+            }`}
+          >
+            {elemento.texto}
+          </p>
+        </div>
+      </motion.div>
     );
   });
 

@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { register } from "swiper/element/bundle";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 register();
 
@@ -271,7 +271,9 @@ function Proyectos(props) {
   const SwiperComponent = ({ elemento }) => {
     return (
       <Swiper
-        navigation
+        {...(window.innerWidth > 767
+          ? { navigation: true }
+          : { navigation: false })}
         slidesPerView={elemento.mobile_app ? 3 : 1}
         speed={500}
         loop
@@ -293,7 +295,7 @@ function Proyectos(props) {
     );
   };
 
-  const escritorio=window.innerWidth > 767
+  const escritorio = window.innerWidth > 767;
 
   const componentesProyectos = elementosProyectos.map((elemento, index) => {
     return (

@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import { motion } from "framer-motion";
+
 export const Nativo = ({ fillColor }) => (
   <svg
     role="img"
@@ -105,7 +107,15 @@ function Idiomas(props) {
       >
         {t("idiomas.Introduccion")}
       </p>
-      <div className="idiomas--container">{elementosIdiomas}</div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 50 }}
+      >
+        <div className="idiomas--container">{elementosIdiomas}</div>
+      </motion.div>
     </section>
   );
 }

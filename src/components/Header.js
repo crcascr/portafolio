@@ -147,6 +147,15 @@ function Header(props) {
     [0, 1]
   );
 
+  const [navBarOpen, setNavBarOpen] = React.useState(
+    window.innerWidth <= 768 ? false : true
+  );
+
+  const navBarVariants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-200%" },
+  };
+
   const [indiceHov, setindiceHov] = React.useState(null);
 
   const componentesNav = elementosNav.map((elemento, index) => {
@@ -188,27 +197,69 @@ function Header(props) {
   });
 
   return (
-    <motion.nav
-      style={{ opacity: navbarOpacity }}
-      transition={{ duration: 0.5 }}
-    >
-      <nav className="navPortafolio">
-        <div className="nav--links">
-          <button
-            className={`esquemaColor ${
-              props.modoOscuro ? "esquemaColor--oscuro" : ""
-            }`}
-            onClick={props.cambiarModo}
+    <div className="navContainer">
+      <button
+        className="nav--toggler"
+        onClick={() => setNavBarOpen(!navBarOpen)}
+      >
+        <svg width="23px" height="23px" viewBox="0 0 23 23">
+          <path
+            style={{ transition: "all 0.3s ease-in-out" }}
+            fill="transparent"
+            strokeWidth="3"
+            stroke={props.modoOscuro ? "white" : "#0e141b"}
+            strokeLinecap="round"
+            d={navBarOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5"}
+          ></path>
+          <path
+            style={{ transition: "all 0.3s ease-in-out" }}
+            fill="transparent"
+            strokeWidth="3"
+            stroke={props.modoOscuro ? "white" : "#0e141b"}
+            strokeLinecap="round"
+            d="M 2 9.423 L 20 9.423"
+            opacity={navBarOpen ? "0" : "1"}
+          ></path>
+          <path
+            style={{ transition: "all 0.3s ease-in-out" }}
+            fill="transparent"
+            strokeWidth="3"
+            stroke={props.modoOscuro ? "white" : "#0e141b"}
+            strokeLinecap="round"
+            d={navBarOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346"}
+          ></path>
+        </svg>
+      </button>
+      <motion.nav
+        animate={navBarOpen ? "open" : "closed"}
+        variants={navBarVariants}
+        transition={{ duration: 1 }}
+      >
+        {
+          <motion.nav
+            style={{ opacity: navbarOpacity }}
+            transition={{ duration: 0.5 }}
           >
-            {props.modoOscuro
-              ? t("header.Modo_claro")
-              : t("header.Modo_oscuro")}
-          </button>
-          <CambioIdioma darkMode={props.modoOscuro} />
-          {componentesNav}
-        </div>
-      </nav>
-    </motion.nav>
+            <nav className="navPortafolio">
+              <div className="nav--links">
+                <button
+                  className={`esquemaColor ${
+                    props.modoOscuro ? "esquemaColor--oscuro" : ""
+                  }`}
+                  onClick={props.cambiarModo}
+                >
+                  {props.modoOscuro
+                    ? t("header.Modo_claro")
+                    : t("header.Modo_oscuro")}
+                </button>
+                <CambioIdioma darkMode={props.modoOscuro} />
+                {componentesNav}
+              </div>
+            </nav>
+          </motion.nav>
+        }
+      </motion.nav>
+    </div>
   );
 }
 
