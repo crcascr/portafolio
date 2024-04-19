@@ -235,7 +235,7 @@ function Header(props) {
         variants={navBarVariants}
         transition={{ duration: 1 }}
       >
-        {
+        {navBarOpen && (
           <motion.nav
             style={{ opacity: navbarOpacity }}
             transition={{ duration: 0.5 }}
@@ -257,7 +257,7 @@ function Header(props) {
               </div>
             </nav>
           </motion.nav>
-        }
+        )}
       </motion.nav>
     </div>
   );

@@ -36,6 +36,37 @@ function Proyectos(props) {
 
   const elementosProyectos = [
     {
+      carpeta: "spotify",
+      titulo: "Spotify Clone",
+      link: "https://sensational-mochi-a15baf.netlify.app/",
+      imagenes: [
+        {
+          nombre: "spotify1",
+          src: require("../images/proyectos/spotify/spotify1.webp"),
+        },
+        {
+          nombre: "spotify2",
+          src: require("../images/proyectos/spotify/spotify2.webp"),
+        },
+        {
+          nombre: "spotify3",
+          src: require("../images/proyectos/spotify/spotify3.webp"),
+        },
+        {
+          nombre: "spotify4",
+          src: require("../images/proyectos/spotify/spotify4.webp"),
+        },
+        {
+          nombre: "spotify5",
+          src: require("../images/proyectos/spotify/spotify5.webp"),
+        },
+      ],
+      color: "#1ed76066",
+      hoverColor: "#1ed760",
+      descripcion: t("proyectos.Descripciones.Spotify"),
+      mobile_app: false,
+    },
+    {
       carpeta: "movies",
       titulo: "Movies App",
       link: "https://github.com/crcascr/movies-app-native",
